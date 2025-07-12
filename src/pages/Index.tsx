@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { Plus, Sparkles } from "lucide-react";
+import { Plus, Sparkles, Search } from "lucide-react";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -24,15 +24,26 @@ const Index = () => {
 
         {/* CTA Section */}
         <div className="text-center mb-16">
-          <Button 
-            size="lg"
-            variant="gradient"
-            onClick={() => navigate("/add-skills")}
-            className="px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-200"
-          >
-            <Plus className="h-5 w-5 mr-2" />
-            Add Your Skills
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button 
+              size="lg"
+              variant="gradient"
+              onClick={() => navigate("/add-skills")}
+              className="px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-200"
+            >
+              <Plus className="h-5 w-5 mr-2" />
+              Add Your Skills
+            </Button>
+            <Button 
+              size="lg"
+              variant="outline"
+              onClick={() => navigate("/find-match")}
+              className="px-8 py-4 text-lg font-semibold text-white border-white/30 hover:bg-white/10 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-200"
+            >
+              <Search className="h-5 w-5 mr-2" />
+              Find Your Match
+            </Button>
+          </div>
         </div>
 
         {/* Preview Stats */}
