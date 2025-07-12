@@ -214,7 +214,7 @@ const AddSkills = () => {
                   checked={formData.isPublic}
                   onCheckedChange={(checked) => setFormData(prev => ({ ...prev, isPublic: checked }))}
                 />
-                <Label htmlFor="public-profile" className="text-base font-medium cursor-pointer">
+                <Label htmlFor="public-profile" className="text-base font-medium">
                   Make my profile public
                 </Label>
                 <Users className="h-4 w-4 text-primary ml-2" />
@@ -343,14 +343,18 @@ const AddSkills = () => {
                 {availabilityOptions.map((option) => (
                   <div 
                     key={option} 
-                    className="flex items-center space-x-3 p-3 border rounded-lg hover:bg-primary/5 transition-colors cursor-pointer"
-                    onClick={() => toggleAvailability(option)}
+                    className="flex items-center space-x-3 p-3 border rounded-lg hover:bg-primary/5 transition-colors"
                   >
                     <Checkbox
                       checked={formData.availability.includes(option)}
                       onCheckedChange={() => toggleAvailability(option)}
                     />
-                    <Label className="cursor-pointer">{option}</Label>
+                    <Label 
+                      className="cursor-pointer flex-1"
+                      onClick={() => toggleAvailability(option)}
+                    >
+                      {option}
+                    </Label>
                   </div>
                 ))}
               </div>
